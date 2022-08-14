@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(bodyParser.raw())
 
-const hexColorToInt = c => [parseInt(c.substr(4, 2), 16), parseInt(c.substr(2, 2), 16), parseInt(c.substr(0, 2), 16)]
+const hexColorToInt = c => [parseInt(c.substr(0, 2), 16), parseInt(c.substr(2, 2), 16), parseInt(c.substr(4, 2), 16)]
 const rgbArrToHex = ([r, g, b]) => `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`
 
 const yeelight = new Yeelight({ ip: '192.168.1.159', port: 55443 })
