@@ -18,6 +18,7 @@ const hexColorToInt = c => [parseInt(c.substr(4, 2), 16), parseInt(c.substr(2, 2
 const yeelight = new Yeelight({ ip: '192.168.1.159', port: 55443 })
 
 yeelight.set_power('on')
+yeelight.set_rgb([30, 215, 96])
 
 app.post('/color', (req, res) => {
     const { color } = req.body
