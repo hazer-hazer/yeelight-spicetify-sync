@@ -23,7 +23,7 @@ yeelight.set_rgb([30, 215, 96])
 app.post('/color', (req, res) => {
     const { color } = req.body
     console.log(`Set YeeLight color to ${color}`, chalk.bgHex(color).hex(color)('■'))
-    yeelight.set_rgb(hexColorToInt(color))
+    yeelight.set_rgb(hexColorToInt(color.slice(1)))
     res.status(200)
     res.send({})
 })
