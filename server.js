@@ -14,7 +14,7 @@ app.use(bodyParser.raw())
 
 const hexColorToInt = c => parseInt(c.substr(4, 2) + c.substr(2, 2) + c.substr(0, 2), 16)
 
-Yeelight.discover(bulb => {
+Yeelight.discover(function (bulb) {
     console.log('YeeLight bulb found');
 
     app.post('/color', (req, res) => {
